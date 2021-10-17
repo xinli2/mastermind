@@ -31,3 +31,32 @@ The idea of MVC is that each part of the program is sufficiently abstracted from
 For us, the implementation of the model is very simple: either an array or String of colors (ints, chars, etc.) that represents the randomly-chosen colors we are trying to guess.
 
 The view is a simple text-based program as we've written many times before. It will prompt the user for their guesses and display if the guess is correct, or show the two statistics that we must calculate.
+
+The controller links these two things together. We will then make three classes:
+1.A main class (named Mastermind) that serves as our view, creates the Model and Controller, and deals with user input and output.
+2.A model class (named MastermindModel) that stores the representation of the computer's guess and uses a constructor and accessors to create and query the solution the player is trying to guess, defined as follows:
+class MastermindModel {
+    //private variable(s) to store the answer
+     
+    public MastermindModel() { /* Make the answer */ }
+     
+    public char getColorAt(int index) {
+        /* Return color at position index as a char
+        (first converted if stored as a number) */
+    }
+}
+1.A controller class named (MastermindController) that is defined as follows:
+class MastermindController {
+
+    public MastermindController(MastermindModel model) { ... }
+
+    public boolean isCorrect(String guess) { ... }
+ 
+    public int getRightColorRightPlace(String guess) { ... }
+
+    public int getRightColorWrongPlace(String guess) { ... }
+
+}
+
+You are to provide the implementation of all three classes, but you must define your controller and model using at least the methods above. Any additional methods or fields you want to add must be private to your classes.
+
